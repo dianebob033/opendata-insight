@@ -56,6 +56,18 @@ def plot_ami_distribution(df: pd.DataFrame) -> None:
     plt.savefig("reports/figures/ami_distribution.png")
     plt.close()
 
+def plot_ratios_scatter(df: pd.DataFrame) -> None:
+    plt.figure(figsize=(8, 5))
+    plt.scatter(df["AMI"], df["ELI_to_AMI"], label="ELI_4 / AMI")
+    plt.scatter(df["AMI"], df["LI_to_AMI"], label="LI_4 / AMI")
+    plt.title("Income Limit Ratios vs AMI (4-Person Household)")
+    plt.xlabel("AMI")
+    plt.ylabel("Ratio")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig("reports/figures/eli_li_ratio_scatter.png")
+    plt.close()
+
 # -----------------------------
 # Main Pipeline
 # -----------------------------
@@ -70,10 +82,13 @@ def main():
     print_summary(df)
     
     plot_ami_distribution(df)
-    print("Saved figure: reports/figures/ami_distribution.png")
+    plot_ratios_scatter(df)
+    print("Saved figures to: reports/figures/")
 
     df.to_csv(OUTPUT_PATH, index=False)
     print(f"\nSaved analysis output to: {OUTPUT_PATH}")
+
+
 
 if __name__ == "__main__":
     main()
