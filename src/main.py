@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import pandas as pd
 
 # -----------------------------
@@ -44,6 +45,16 @@ def print_summary(df: pd.DataFrame) -> None:
 
     print("\nAverage ratios:")
     print(df[["ELI_to_AMI", "LI_to_AMI"]].mean())
+    
+def plot_ami_distribution(df: pd.DataFrame) -> None:
+    plt.figure(figsize=(8, 5))
+    plt.hist(df["AMI"], bins=20)
+    plt.title("Distribution of AMI by County (4-Person Household)")
+    plt.xlabel("AMI")
+    plt.ylabel("Number of Counties")
+    plt.tight_layout()
+    plt.savefig("reports/figures/ami_distribution.png")
+    plt.close()
 
 # -----------------------------
 # Main Pipeline
@@ -57,6 +68,9 @@ def main():
     df = compute_ratios(df)
 
     print_summary(df)
+    
+    plot_ami_distribution(df)
+    print("Saved figure: reports/figures/ami_distribution.png")
 
     df.to_csv(OUTPUT_PATH, index=False)
     print(f"\nSaved analysis output to: {OUTPUT_PATH}")
