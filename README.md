@@ -21,3 +21,11 @@ python src/main.py
 - Significant variation in AMI across California counties.
 - Extremely Low Income (ELI) limits are consistently a small fraction of AMI.
 - The ratio between low-income limits and AMI is relatively stable across counties.
+
+## Visualizations (V2)
+
+### AMI Distribution
+![AMI Distribution](reports/figures/ami_distribution.png)
+
+### Ratios vs AMI
+![Ratios vs AMI](reports/figures/eli_li_ratio_scatter.png)
