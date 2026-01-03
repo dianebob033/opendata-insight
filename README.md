@@ -56,6 +56,18 @@ After running the pipeline, figures are saved to:
 > If images do not render on GitHub, ensure they exist locally after running and are committed to the repo.
 
 ---
+## How to Run
+
+```bash
+# 1. Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run pipeline
+python src/main.py
 
 ## Project Structure
 ```text
