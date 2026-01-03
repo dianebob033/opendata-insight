@@ -45,11 +45,9 @@ Based on the script output:
 ---
 
 ## Visualizations 
-```md
-### AMI Distribution by County
+
 ![AMI Distribution](reports/figures/ami_distribution.png)
 
-### Income Limit Ratios vs AMI
 ![ELI/LI Ratios](reports/figures/eli_li_ratio_scatter.png)
 
 ---
