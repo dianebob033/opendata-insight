@@ -44,16 +44,13 @@ Based on the script output:
 
 ---
 
-## Visualizations (Generated)
-After running the pipeline, figures are saved to:
+## Visualizations 
+```md
+### AMI Distribution by County
+![AMI Distribution](reports/figures/ami_distribution.png)
 
-- `reports/figures/ami_distribution.png`  
-  **AMI Distribution by County** (Histogram)
-
-- `reports/figures/eli_li_ratio_scatter.png`  
-  **Income Limit Ratios vs AMI** (Scatter plot for ELI/AMI and LI/AMI)
-
-> If images do not render on GitHub, ensure they exist locally after running and are committed to the repo.
+### Income Limit Ratios vs AMI
+![ELI/LI Ratios](reports/figures/eli_li_ratio_scatter.png)
 
 ---
 ## How to Run
